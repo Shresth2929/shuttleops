@@ -63,7 +63,12 @@ import { BookingService } from '../../core/services/booking.service';
           class="header-icon-btn"
           aria-label="Notifications"
         >
-          <mat-icon [matBadge]="notificationsCount" matBadgeColor="warn" matBadgeSize="small">
+          <mat-icon
+            [matBadge]="notificationsCount"
+            matBadgeColor="warn"
+            matBadgeSize="small"
+            aria-hidden="false"
+          >
             notifications
           </mat-icon>
         </button>
