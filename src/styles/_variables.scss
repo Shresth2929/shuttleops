@@ -1,0 +1,136 @@
+:root {
+  /* Brand Tokens - Professional Enterprise Blue */
+  --so-primary: #1565C0;
+  --so-primary-hover: #0D47A1;
+  --so-primary-light: #E3F2FD;
+  --so-primary-50: #EEF6FC;
+  --so-primary-border: #BBDEFB;
+  
+  /* Accent / Secondary */
+  --so-accent: #00897B;
+  --so-accent-light: #E0F2F1;
+  
+  /* Neutral Surfaces & Backgrounds */
+  --so-bg: #F4F6F9;
+  --so-surface: #FFFFFF;
+  --so-surface-hover: #F8FAFC;
+  --so-surface-active: #F1F5F9;
+  --so-card-bg: #FFFFFF;
+  --so-sidebar-bg: #0F172A; /* Slate Navy sidebar for clean enterprise ops feel */
+  --so-sidebar-hover: #1E293B;
+  --so-sidebar-active: #2563EB;
+  --so-sidebar-text: #94A3B8;
+  --so-sidebar-text-active: #FFFFFF;
+  --so-sidebar-border: #1E293B;
+  
+  /* Borders & Dividers */
+  --so-border: #E2E8F0;
+  --so-border-subtle: #F1F5F9;
+  --so-border-strong: #CBD5E1;
+  
+  /* Typography Colors */
+  --so-text-primary: #0F172A;
+  --so-text-secondary: #475569;
+  --so-text-muted: #64748B;
+  --so-text-inverse: #FFFFFF;
+  
+  /* Semantic Status Tokens (Background, Text, Border) */
+  --so-status-accepted-bg: #ECFDF5;
+  --so-status-accepted-text: #065F46;
+  --so-status-accepted-border: #A7F3D0;
+  
+  --so-status-requested-bg: #EFF6FF;
+  --so-status-requested-text: #1E40AF;
+  --so-status-requested-border: #BFDBFE;
+  
+  --so-status-waiting-bg: #FFFBEB;
+  --so-status-waiting-text: #92400E;
+  --so-status-waiting-border: #FDE68A;
+  
+  --so-status-ongoing-bg: #FAF5FF;
+  --so-status-ongoing-text: #6B21A8;
+  --so-status-ongoing-border: #E9D5FF;
+  
+  --so-status-completed-bg: #F0FDF4;
+  --so-status-completed-text: #166534;
+  --so-status-completed-border: #BBF7D0;
+  
+  --so-status-cancelled-bg: #FEF2F2;
+  --so-status-cancelled-text: #991B1B;
+  --so-status-cancelled-border: #FECACA;
+  
+  --so-status-declined-bg: #FFF1F2;
+  --so-status-declined-text: #9F1239;
+  --so-status-declined-border: #FECDD3;
+  
+  --so-status-noshow-bg: #F8FAFC;
+  --so-status-noshow-text: #475569;
+  --so-status-noshow-border: #CBD5E1;
+
+  /* Driver Timeline Activity Colors */
+  --so-activity-duty-bg: #DBEAFE;
+  --so-activity-duty-text: #1E40AF;
+  --so-activity-duty-border: #93C5FD;
+
+  --so-activity-trip-bg: #DCFCE7;
+  --so-activity-trip-text: #166534;
+  --so-activity-trip-border: #86EFAC;
+
+  --so-activity-break-bg: #FEF3C7;
+  --so-activity-break-text: #92400E;
+  --so-activity-break-border: #FCD34D;
+
+  --so-activity-vehicle-change-bg: #F3E8FF;
+  --so-activity-vehicle-change-text: #6B21A8;
+  --so-activity-vehicle-change-border: #D8B4FE;
+
+  --so-activity-empty-leg-bg: #F1F5F9;
+  --so-activity-empty-leg-text: #475569;
+  --so-activity-empty-leg-border: #CBD5E1;
+
+  /* Spacing Scale (4px base) */
+  --so-space-0: 0px;
+  --so-space-1: 4px;
+  --so-space-2: 8px;
+  --so-space-3: 12px;
+  --so-space-4: 16px;
+  --so-space-5: 20px;
+  --so-space-6: 24px;
+  --so-space-7: 28px;
+  --so-space-8: 32px;
+  --so-space-10: 40px;
+  --so-space-12: 48px;
+
+  /* Typography Scale */
+  --so-font-xs: 11px;
+  --so-font-sm: 12.5px;
+  --so-font-base: 14px;
+  --so-font-md: 15px;
+  --so-font-lg: 18px;
+  --so-font-xl: 22px;
+  --so-font-2xl: 26px;
+
+  /* Font Weights */
+  --so-fw-normal: 400;
+  --so-fw-medium: 500;
+  --so-fw-semibold: 600;
+  --so-fw-bold: 700;
+
+  /* Border Radii */
+  --so-radius-xs: 3px;
+  --so-radius-sm: 5px;
+  --so-radius-md: 8px;
+  --so-radius-lg: 12px;
+  --so-radius-full: 9999px;
+
+  /* Elevation Shadows */
+  --so-shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --so-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --so-shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --so-shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+  --so-shadow-drawer: -4px 0 24px rgba(15, 23, 42, 0.12);
+
+  /* Transitions */
+  --so-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --so-transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}

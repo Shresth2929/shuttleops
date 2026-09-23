@@ -1,0 +1,284 @@
+/* Angular Material Theming & Overrides */
+@use '@angular/material' as mat;
+
+/* Material Form Fields Customization */
+.mat-mdc-form-field {
+  font-family: inherit !important;
+  font-size: var(--so-font-base) !important;
+
+  .mat-mdc-text-field-wrapper {
+    background-color: var(--so-surface) !important;
+    border-radius: var(--so-radius-md) !important;
+  }
+
+  &.dense-form-field {
+    .mat-mdc-form-field-subscript-wrapper {
+      display: none;
+    }
+  }
+}
+
+/* Material Buttons Customization */
+.mat-mdc-button, .mat-mdc-raised-button, .mat-mdc-outlined-button, .mat-mdc-flat-button {
+  font-family: inherit !important;
+  font-weight: var(--so-fw-medium) !important;
+  border-radius: var(--so-radius-md) !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  font-size: var(--so-font-base) !important;
+  box-shadow: none !important;
+  transition: all var(--so-transition-fast) !important;
+
+  &.mat-primary {
+    --mdc-filled-button-container-color: var(--so-primary);
+    --mdc-filled-button-label-text-color: #FFFFFF;
+  }
+}
+
+/* Action Button Variants */
+.btn-primary {
+  background-color: var(--so-primary) !important;
+  color: #FFFFFF !important;
+  padding: 8px 16px;
+  border-radius: var(--so-radius-md);
+  font-weight: var(--so-fw-medium);
+  font-size: var(--so-font-base);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color var(--so-transition-fast);
+
+  &:hover {
+    background-color: var(--so-primary-hover) !important;
+  }
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.btn-secondary {
+  background-color: var(--so-surface) !important;
+  color: var(--so-text-primary) !important;
+  border: 1px solid var(--so-border) !important;
+  padding: 8px 16px;
+  border-radius: var(--so-radius-md);
+  font-weight: var(--so-fw-medium);
+  font-size: var(--so-font-base);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--so-transition-fast);
+
+  &:hover {
+    background-color: var(--so-surface-hover) !important;
+    border-color: var(--so-border-strong) !important;
+  }
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.btn-danger {
+  background-color: #FEF2F2 !important;
+  color: #991B1B !important;
+  border: 1px solid #FECACA !important;
+  padding: 8px 16px;
+  border-radius: var(--so-radius-md);
+  font-weight: var(--so-fw-medium);
+  font-size: var(--so-font-base);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  &:hover {
+    background-color: #FEE2E2 !important;
+  }
+}
+
+/* Enterprise Data Table Base */
+.so-table-container {
+  background: var(--so-surface);
+  border: 1px solid var(--so-border);
+  border-radius: var(--so-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--so-shadow-subtle);
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--so-font-base);
+    text-align: left;
+
+    thead {
+      background-color: var(--so-surface-hover);
+      border-bottom: 1px solid var(--so-border);
+
+      th {
+        padding: 12px 16px;
+        font-size: var(--so-font-xs);
+        font-weight: var(--so-fw-semibold);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--so-text-secondary);
+        white-space: nowrap;
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid var(--so-border-subtle);
+        transition: background-color var(--so-transition-fast);
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &:hover {
+          background-color: var(--so-surface-hover);
+        }
+
+        &.clickable-row {
+          cursor: pointer;
+        }
+
+        td {
+          padding: 13px 16px;
+          color: var(--so-text-primary);
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: var(--so-radius-full);
+  font-size: var(--so-font-xs);
+  font-weight: var(--so-fw-medium);
+  white-space: nowrap;
+  border: 1px solid transparent;
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  &.status-accepted {
+    background-color: var(--so-status-accepted-bg);
+    color: var(--so-status-accepted-text);
+    border-color: var(--so-status-accepted-border);
+    .badge-dot { background-color: var(--so-status-accepted-text); }
+  }
+
+  &.status-requested {
+    background-color: var(--so-status-requested-bg);
+    color: var(--so-status-requested-text);
+    border-color: var(--so-status-requested-border);
+    .badge-dot { background-color: var(--so-status-requested-text); }
+  }
+
+  &.status-waiting {
+    background-color: var(--so-status-waiting-bg);
+    color: var(--so-status-waiting-text);
+    border-color: var(--so-status-waiting-border);
+    .badge-dot { background-color: var(--so-status-waiting-text); }
+  }
+
+  &.status-ongoing, &.status-on-going {
+    background-color: var(--so-status-ongoing-bg);
+    color: var(--so-status-ongoing-text);
+    border-color: var(--so-status-ongoing-border);
+    .badge-dot { background-color: var(--so-status-ongoing-text); }
+  }
+
+  &.status-completed {
+    background-color: var(--so-status-completed-bg);
+    color: var(--so-status-completed-text);
+    border-color: var(--so-status-completed-border);
+    .badge-dot { background-color: var(--so-status-completed-text); }
+  }
+
+  &.status-cancelled {
+    background-color: var(--so-status-cancelled-bg);
+    color: var(--so-status-cancelled-text);
+    border-color: var(--so-status-cancelled-border);
+    .badge-dot { background-color: var(--so-status-cancelled-text); }
+  }
+
+  &.status-declined {
+    background-color: var(--so-status-declined-bg);
+    color: var(--so-status-declined-text);
+    border-color: var(--so-status-declined-border);
+    .badge-dot { background-color: var(--so-status-declined-text); }
+  }
+
+  &.status-noshow, &.status-no-show {
+    background-color: var(--so-status-noshow-bg);
+    color: var(--so-status-noshow-text);
+    border-color: var(--so-status-noshow-border);
+    .badge-dot { background-color: var(--so-status-noshow-text); }
+  }
+
+  /* Driver status badges */
+  &.status-available {
+    background-color: #ECFDF5;
+    color: #065F46;
+    border-color: #A7F3D0;
+    .badge-dot { background-color: #059669; }
+  }
+
+  &.status-ontrip, &.status-on-trip {
+    background-color: #EFF6FF;
+    color: #1E40AF;
+    border-color: #BFDBFE;
+    .badge-dot { background-color: #2563EB; }
+  }
+
+  &.status-onbreak, &.status-on-break {
+    background-color: #FFFBEB;
+    color: #92400E;
+    border-color: #FDE68A;
+    .badge-dot { background-color: #D97706; }
+  }
+
+  &.status-offduty, &.status-off-duty {
+    background-color: #F1F5F9;
+    color: #475569;
+    border-color: #CBD5E1;
+    .badge-dot { background-color: #64748B; }
+  }
+}
+
+/* Material Dialog & BottomSheet / Drawer Customization */
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: var(--so-radius-lg) !important;
+  box-shadow: var(--so-shadow-lg) !important;
+  background-color: var(--so-surface) !important;
+}
+
+.mat-mdc-snack-bar-container {
+  &.so-snackbar-success {
+    --mdc-snackbar-container-color: #065F46;
+    --mdc-snackbar-supporting-text-color: #FFFFFF;
+  }
+  &.so-snackbar-error {
+    --mdc-snackbar-container-color: #991B1B;
+    --mdc-snackbar-supporting-text-color: #FFFFFF;
+  }
+  &.so-snackbar-info {
+    --mdc-snackbar-container-color: #1E293B;
+    --mdc-snackbar-supporting-text-color: #FFFFFF;
+  }
+}

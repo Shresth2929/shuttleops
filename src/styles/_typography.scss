@@ -1,0 +1,29 @@
+/* Typography Utility Classes */
+.font-mono {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.text-xs { font-size: var(--so-font-xs); }
+.text-sm { font-size: var(--so-font-sm); }
+.text-base { font-size: var(--so-font-base); }
+.text-md { font-size: var(--so-font-md); }
+.text-lg { font-size: var(--so-font-lg); }
+.text-xl { font-size: var(--so-font-xl); }
+.text-2xl { font-size: var(--so-font-2xl); }
+
+.font-normal { font-weight: var(--so-fw-normal); }
+.font-medium { font-weight: var(--so-fw-medium); }
+.font-semibold { font-weight: var(--so-fw-semibold); }
+.font-bold { font-weight: var(--so-fw-bold); }
+
+.text-primary { color: var(--so-text-primary); }
+.text-secondary { color: var(--so-text-secondary); }
+.text-muted { color: var(--so-text-muted); }
+.text-brand { color: var(--so-primary); }
+.text-inverse { color: var(--so-text-inverse); }
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
