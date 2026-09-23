@@ -1,299 +1,179 @@
 # ShuttleOps
 ## Smart Campus Transit Operations Console
 
-ShuttleOps is a campus transportation operations console built for managing shuttle bookings, driver schedules, route assignments, trip history, and operational demand in a single operational workspace.
+ShuttleOps is a campus shuttle operations dashboard designed to help operations teams manage bookings, driver schedules, routing, demand analytics, and trip history from a single interface.
 
-The application is designed for a campus or enterprise mobility environment where dispatchers need a clear understanding of live demand, fleet utilization, driver availability, and service reliability without relying on a large operational stack during the frontend prototype phase.
+This project focuses on the day-to-day operational needs of a campus transportation service, giving dispatch teams a clear overview of fleet activity, outstanding booking requests, driver availability, and route performance in a responsive, desktop-first console.
 
-## Project Overview
+## 1. Project Overview
 
-ShuttleOps supports the core workflows required to operate a shuttle service across a campus or company environment:
+ShuttleOps supports the core operational workflows required to run a campus shuttle service effectively:
 
-- shuttle booking management
-- driver availability and scheduling
-- route allocation
-- vehicle assignment visibility
-- trip history tracking
+- booking management
+- driver scheduling and activity coordination
+- route planning and assignment visibility
+- vehicle and driver allocation review
 - demand and usage analytics
+- trip history tracking
 
-The product focuses on operational clarity, clean data relationships, and responsive desktop-first workflow management.
+The product is designed for clarity, operational efficiency, and realistic workflow simulation within a frontend-only prototype.
 
-## Problem Statement
+## 2. Problem Statement
 
-Campus transportation requires coordination across several moving parts:
+Campus transportation teams must coordinate multiple workstreams at the same time:
 
-- passengers request rides at different times across campus
-- drivers need valid work windows and rest breaks
-- routes must be assigned consistently to vehicles and drivers
-- dispatch teams need visibility into demand peaks and underutilized routes
-- cancellations, no-shows, and operational exceptions must be visible immediately
+- passengers request rides across different campus zones
+- drivers need valid schedules and activity windows
+- routes must be assigned consistently to drivers and vehicles
+- operations teams need to identify demand spikes and service bottlenecks
+- cancellations, no-shows, and exceptions must be visible quickly
 
-Without a unified operations interface, these tasks become fragmented and difficult to manage reliably.
+Without a unified operational console, these tasks become fragmented, difficult to track, and harder to manage reliably.
 
-## Solution
+## 3. Solution
 
-ShuttleOps delivers a unified frontend operations console that consolidates booking lifecycle management, driver scheduling, route status, and demand intelligence into a single interface.
+ShuttleOps brings booking, scheduling, route management, trip history, and analytics into one operations dashboard.
 
-The product emphasizes:
+The project is built as a frontend-focused management tool that lets users:
 
-- clear booking and dispatch workflows
-- driver timeline management
-- route and assignment visibility
-- operational KPI summaries
-- high-signal analytics derived from current mock data
-- local persistence for realistic demo interaction
+- review operational activity at a glance
+- update bookings and driver schedules
+- review route and assignment details
+- inspect demand patterns from current mock data
+- maintain state locally within the browser
 
-## Key Features
+This makes it suitable as a practical demo and assignment project for campus shuttle operations planning.
 
-### Booking Management
+## 4. Key Features
 
-- Create bookings
-- Edit bookings
-- Cancel bookings
-- Search and filter booking records
-- Booking detail drawer
-- Booking lifecycle tracking
-- Passenger and route context
-- Status tracking across scheduled, active, completed, cancelled and no-show flows
+- Operations overview dashboard
+- Booking management
+- Search and filtering
+- Booking creation, editing, and cancellation
+- Driver scheduling and activity management
+- Route management
+- Vehicle, driver, and route assignment
+- Analytics and demand metrics
+- Trip history
+- Local persistence
+- Responsive interface
+- Accessibility considerations
 
-### Driver Scheduling
+### Additional highlights
 
-- Driver availability overview
-- Timeline-based driver schedule
-- Duty windows
-- Break blocks
-- Pickup and drop activities
-- Vehicle changes
-- Empty leg scheduling
-- Activity editing and deletions
-- Schedule validation to prevent invalid time windows and overlaps
+- Booking lifecycle tracking for scheduled, active, completed, cancelled, and no-show states
+- Driver activity validation to prevent invalid or overlapping schedules
+- Route detail review for assignment and scheduling context
+- Operational KPI summaries and traffic-demand views
+- Empty states and feedback for filtered or empty datasets
+- Browser-based persistence for a realistic demo workflow
 
-### Route Management
-
-- Route list and filtering
-- Route stop sequence visualization
-- Driver assignment
-- Vehicle assignment
-- Route detail drawer
-- Operational metadata such as duration, distance and peak hour
-
-### Demand & Usage
-
-- Hourly demand profile
-- Route utilization metrics
-- Driver utilization visibility
-- Peak demand analysis
-- Booking status insights
-- Operational summaries derived from current mock records
-
-### Trip History
-
-- Search trip logs
-- Filter trip records
-- Review route and passenger data
-- View trip details in a focused drawer
-- Review trip timing and status history
-
-## Technology Stack
+## 5. Tech Stack
 
 - Angular 18
 - TypeScript
-- Angular Signals
+- SCSS
+- Angular Material
 - RxJS
 - Angular Router
 - Reactive Forms
-- Angular Material
-- SCSS
-- LocalStorage-based persistence for demo state
-- Jasmine and Karma for unit testing
-- Git and GitHub for version control
+- Jasmine and Karma for testing
 
-## Architecture
+## 6. Application Structure / Architecture
 
-The application follows a feature-oriented Angular structure that matches the current repository layout.
+The application follows a feature-oriented Angular architecture built around modular domain areas.
 
-### Actual project structure
+The codebase is organized into a few core layers:
 
-```text
-src/
-  app/
-    app.component.ts
-    app.routes.ts
-    app.config.ts
-    core/
-      data/
-      models/
-      services/
-    features/
-      overview/
-      bookings/
-      drivers/
-      routes/
-      analytics/
-      trips/
-      not-found/
-    layout/
-      app-shell/
-      header/
-      sidebar/
-    shared/
-      components/
-```
+- core: shared models, services, and business logic
+- features: operational screens such as overview, bookings, drivers, routes, analytics, and trips
+- layout: app shell, navigation, header, and shell composition
+- shared: reusable UI components such as badges, cards, dialogs, and states
+- data: mock data used to simulate realistic shuttle operations
 
-### Architectural responsibilities
+This structure keeps the app maintainable and makes the feature boundaries clear while remaining suitable for a frontend-only assignment.
 
-- core
-  - shared business logic, models, typed interfaces, and application service layer
-- shared
-  - reusable UI building blocks such as stat cards, status badges, page headers, empty states and confirmation dialogs
-- features
-  - domain-specific views such as overview, bookings, drivers, routes, analytics and trips
-- services
-  - data access, state management, validation, localStorage persistence, and notification behavior
-- models
-  - strongly typed booking, driver, route, trip, user, vehicle and demand object definitions
-- data
-  - realistic mock data used to simulate an operations console with relationships between bookings, routes, vehicles and drivers
-- layout
-  - application shell, navigation, header and responsive shell behavior
+## 7. Main Modules / Screens
 
-## Engineering Decisions
+### Overview
+A high-level operations dashboard showing key service metrics and recent activity.
 
-### Angular Signals
+### Bookings
+Supports booking review, filtering, creation, updating, and cancellation.
 
-Signals are used to manage reactive application state, including selected records, filters, drawer state and derived UI state. This keeps state updates compact and predictable while staying aligned with Angular’s reactive model.
+### Drivers
+Provides visibility into driver schedules, availability, and activity management.
 
-### RxJS
+### Routes
+Displays route information, stop context, and driver/vehicle assignment relationships.
 
-RxJS is used for asynchronous workflows and service-based data access patterns. This keeps the architecture REST-ready and makes it straightforward to replace mock simulation with an API layer later.
+### Analytics
+Shows usage patterns and operational demand data through summaries and metrics.
 
-### Service abstraction
+### Trip History
+Provides trip log review and detailed trip inspection across historical records.
 
-The project separates the UI from the data layer via services. This makes the app ready for REST API integration without large UI rewrites.
+## 8. Data and State Management
 
-### Lazy-loaded routes
+The current version uses mock or demo data rather than a production backend.
 
-Feature routes are lazy-loaded through Angular route definitions. This keeps the initial bundle lighter and aligns with a scalable enterprise frontend structure.
+- booking, driver, route, trip, and vehicle information is seeded from local mock datasets
+- the UI relies on Angular services to manage state and interactions
+- browser local persistence is used to retain operational changes between refreshes
+- the project does not include a production API, database, or backend service layer
 
-### Reusable components
+This is intentional for the current implementation and keeps the app focused on frontend workflow management.
 
-Shared UI components reduce repetition and keep business workflows consistent across the app.
+## 9. Validation and Error Handling
 
-### Reactive Forms
-
-Reactive Forms are used where user input and validation are important, particularly in booking and activity editing workflows.
-
-### Centralized models
-
-Strongly typed interfaces keep entity relationships clear and reduce drift between the data layer and UI logic.
-
-### LocalStorage
-
-LocalStorage is used for demo persistence so important operational changes remain available after a page refresh without adding a backend dependency.
-
-## Performance
-
-The implemented performance approach is intentionally pragmatic and aligned to the current project scope.
-
-- lazy-loaded feature routes
-- computed signals for derived state
-- reusable UI components
-- client-side filtering and sorting on a manageable mock dataset
-- limited, targeted state updates without unnecessary rerenders
-- no large, unnecessary external libraries added
-
-The app does not claim production-scale backend performance characteristics. For larger datasets, filtering, sorting, pagination and aggregation can be moved to an API or database layer as part of a subsequent architecture phase.
-
-## Validation and Error Handling
-
-The app includes several user-facing safeguards and validation patterns:
+The application includes practical validation and user feedback to support operational correctness:
 
 - booking form validation
-- schedule validation for driver activities
-- invalid time prevention
-- overlap detection in driver schedules
+- driver schedule conflict checks
+- invalid time-window prevention
 - route and assignment validation
-- empty states for no-result scenarios
-- loading states while data is being resolved
-- success notifications for create/update/cancel actions
-- error feedback for invalid scheduling decisions
-- confirmation flows for destructive operations
+- empty-state handling for no-result searches
+- confirmation steps for destructive actions
+- status feedback for create, update, and cancellation flows
 
-## Testing
+These behaviors are designed to make the console feel realistic while remaining within the scope of a frontend demo.
 
-The project includes a focused suite of Jasmine/Karma tests covering important business logic and service behavior.
+## 10. Testing
 
-The following test areas are covered in the current repository:
+The project includes a focused test suite covering core service and business logic.
 
-- booking creation
-- booking update
-- booking cancellation
-- filtering behavior
-- driver schedule validation
-- activity creation and deletion
-- analytics demand calculations
+Current verified status:
 
-Verified current result:
+- 18 passing unit tests
 
-- 18 tests passing
+This confirms the current implementation has passing automated checks for the included logic and workflows.
 
-This is the current verified state of the project in the repository.
+## 11. Production Build
 
-## Complexity Notes
-
-### Booking Filtering
-O(n) for the current client-side dataset.
-
-### Sorting
-O(n log n).
-
-### Demand Aggregation
-O(n) across the active booking set for each aggregation pass.
-
-### Driver Timeline
-Approximately O(D × A), where D is the number of drivers and A is the average number of activities per driver.
-
-For larger production datasets, these operations can be pushed to API-driven filtering, pagination, and aggregation services.
-
-## Running Locally
-
-Use the project commands defined in the repository scripts.
-
-```bash
-npm install
-npm start
-# or
-npm run start
-```
-
-Run tests:
-
-```bash
-npm test
-```
-
-Run a production build:
+The project currently builds successfully with:
 
 ```bash
 npm run build
 ```
 
-## Future Improvements
+This confirms the Angular production build is functioning for the current codebase.
 
-Planned future enhancements for a real production rollout include:
+## 12. Local Setup
 
-- REST backend integration
-- authentication and role-based authorization
-- real-time shuttle tracking and dispatch updates
-- WebSocket-based operational notifications
-- map integration for route visibility
-- production-grade notification escalation
-- server-side pagination and filtering
-- advanced demand forecasting and capacity planning
+To run the project locally:
 
-These are future roadmap items and are not part of the current implementation.
+```bash
+npm install
+npm start
+```
 
-## Project Structure
+Then open the application in a browser at:
+
+```text
+http://localhost:4200
+```
+
+## 13. Project Structure
 
 ```text
 .
@@ -335,10 +215,31 @@ These are future roadmap items and are not part of the current implementation.
 └── dist/
 ```
 
-## Assignment Context
+## 14. Current Limitations
 
-This project was developed as a frontend implementation of a shuttle management case study for a campus transportation operational environment. The focus is on a realistic operations console experience with booking workflows, route management, driver scheduling, trip history and insight-driven demand analysis.
+This version of ShuttleOps is a frontend-focused operations dashboard and does not include the following production capabilities:
 
-## Summary
+- no production backend
+- no authentication
+- no real-time GPS tracking
+- no map integration
+- no production forecasting service
 
-ShuttleOps is a polished, desktop-first operations dashboard designed to help teams manage campus transportation workflows in a single interface. The current implementation focuses on the real operational needs of shuttle dispatch, scheduling, route management, and analytics while keeping the frontend architecture maintainable and ready for future API and backend integration.
+These limitations are clearly understood and are not presented as active features in the current application.
+
+## 15. Future Improvements
+
+Potential future enhancements include:
+
+- real backend and API integration
+- authentication and role-based authorization
+- real-time fleet tracking and dispatch notifications
+- map-based route visualization
+- production forecasting and capacity planning
+- server-side filtering and data aggregation at scale
+
+## 16. Assignment Context
+
+This project is a frontend assignment and prototype for a smart campus shuttle operations console. The goal is to demonstrate realistic operations management workflows in a clean and usable interface, including booking handling, schedule optimization, route oversight, trip review, and operational analytics.
+
+The current implementation is intentionally focused on providing a strong user experience for operational planning and console-style business workflows without claiming production-grade backend infrastructure or live operational services.
