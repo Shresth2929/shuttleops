@@ -5,6 +5,8 @@ ShuttleOps is a campus shuttle operations dashboard designed to help operations 
 
 This project focuses on the day-to-day operational needs of a campus transportation service, giving dispatch teams a clear overview of fleet activity, outstanding booking requests, driver availability, and route performance in a responsive, desktop-first console.
 
+Live Link: https://shuttleops.vercel.app/overview
+
 ## 1. Project Overview
 
 ShuttleOps supports the core operational workflows required to run a campus shuttle service effectively:
